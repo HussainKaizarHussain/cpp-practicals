@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    // 1. Constants and Variables
+    const double TAX_RATE = 0.08; // 8% sales tax (const value)
+    
+    std::string itemName;
+    int quantity = 0;
+    double unitPrice = 0.0;
+    
+    // 2. User Input (cin)
+    std::cout << "=== Practical 01: C++ Fundamentals Demo ===\n";
+    std::cout << "Enter item name: ";
+    std::cin >> itemName;
+    
+    std::cout << "Enter quantity: ";
+    std::cin >> quantity;
+    
+    std::cout << "Enter unit price ($): ";
+    std::cin >> unitPrice;
+    
+    // 3. Operators Demonstration
+    // Arithmetic operators
+    double subtotal = quantity * unitPrice;
+    double taxAmount = subtotal * TAX_RATE;
+    double totalCost = subtotal + taxAmount;
+    
+    // Relational and Logical operators
+    bool isBulkOrder = (quantity >= 10);
+    bool qualifiesForFreeShipping = (totalCost > 50.0) && (quantity > 0);
+    
+    // 4. Output Display (cout)
+    std::cout << "\n----------------------------------------\n";
+    std::cout << "--- ORDER SUMMARY ---\n";
+    std::cout << "Item: " << itemName << "\n";
+    std::cout << "Quantity: " << quantity << "\n";
+    std::cout << "Unit Price: $" << unitPrice << "\n";
+    std::cout << "Subtotal: $" << subtotal << "\n";
+    std::cout << "Tax (8%): $" << taxAmount << "\n";
+    std::cout << "Total Cost: $" << totalCost << "\n";
+    std::cout << "----------------------------------------\n";
+    
+    // Display relational/logical checks
+    std::cout << "Bulk Order (>= 10 items)? " << (isBulkOrder ? "Yes" : "No") << "\n";
+    std::cout << "Qualifies for Free Shipping? " << (qualifiesForFreeShipping ? "Yes" : "No") << "\n";
+    
+    return 0;
+}
